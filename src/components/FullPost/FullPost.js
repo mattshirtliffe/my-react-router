@@ -19,7 +19,7 @@ class FullPost extends Component {
                         loadedPost: response.data
                     })
                 })
-                .catch(err => console.log(err))
+                .catch(err => {console.log(err)})
             }
             
         }
@@ -30,7 +30,9 @@ class FullPost extends Component {
         axios.delete(`https://jsonplaceholder.typicode.com/posts/${this.props.id}`)
         .then(response => {
             console.log(response);
-        })
+        }).then(err => {
+            console.log(err)
+        });
     }
 
     render () {
