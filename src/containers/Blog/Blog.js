@@ -11,10 +11,6 @@ const AsyncNewPost = asyncComponent(() => {
     return import('./NewPost/NewPost');
 });
 
-
-
-
-
 class Blog extends Component {
 
     state = {
@@ -48,8 +44,8 @@ class Blog extends Component {
                 <Switch>
                     {showNewPost}
                     <Route path="/posts" component={Posts} />
+                    <Redirect from="/" to="/posts" />
                     <Route render={() => <h1>Not Found</h1>} />
-                    {/* <Redirect from="/" to="/posts" /> */}
                     {/* <Route path="/" component={Posts} /> */}
                 </Switch>
                 
